@@ -1,5 +1,4 @@
 #import <Cephei/HBPreferences.h>
-// #import <CepheiUI/UIColor+HBAdditions.h>
 #import "FloatingButton.h"
 
 #ifndef ScreenSize
@@ -248,9 +247,6 @@ typedef enum : int {
                 @throw [NSException exceptionWithName:@"Couldn't find this border" reason:@"How? Good question. Check your code." userInfo:nil];
         }
 
-        // [self setBackgroundColor:[UIColor hb_colorWithPropertyListValue:@"#6e6e6e"]];
-        // [self.layer setCornerRadius:5];
-
         UIPanGestureRecognizer *drag = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDrag:)];
         [self addGestureRecognizer:drag];
 
@@ -327,7 +323,6 @@ typedef enum : int {
 
         return;
 	}
-    // [sender setTranslation:CGPointZero inView:self.superview];
     [sender setTranslation:CGPointMake(0, 0) inView:self.superview];
 }
 
@@ -492,11 +487,6 @@ typedef enum : int {
         default:
             @throw [NSException exceptionWithName:@"Couldn't find this border" reason:@"How? Good question. Check your code." userInfo:nil];
     }
-
-    // if ([UIDevice currentDevice].orientation == UIInterfaceOrientationPortrait || \
-    //     [UIDevice currentDevice].orientation == UIInterfaceOrientationPortraitUpsideDown)
-    //     [self setPositionPortrait];
-    // else [self setPositionLandscape];
 
     [self.prefs setObject:[NSNumber numberWithInteger:[UIDevice currentDevice].orientation] forKey:@"orientation"];
 }
