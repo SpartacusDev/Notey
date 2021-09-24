@@ -14,3 +14,9 @@ Yes please. Just file PRs with your desired changes, with prior testing please! 
 • Thanks to Herpa for suggesting this tweak and giving me more ideas for improvements, and suggesting this icon. My icon idea was NT in red over a semi-transparent white...
 
 • Thanks to whoever made the tea emoji and no-access emoji cause my icon is basically the two of them on top of each other
+
+• Thanks to anyone who worked on LibGcUniversal
+
+• Thanks to anyone who worked on Cephei
+
+• Thanks to anyone who worked on Alderis
