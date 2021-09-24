@@ -1,0 +1,9 @@
+Package: com.spartacus.noteycc
+Name: NoteyCC
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome Control Center module!
+Maintainer: Spartacus
+Author: Spartacus
+Section: Control Center (Modules)

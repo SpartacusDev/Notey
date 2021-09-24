@@ -1,0 +1,11 @@
+Package: com.spartacus.notey
+Name: Notey
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Open a note from everywhere!
+Maintainer: Spartacus
+Author: Spartacus
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), ws.hbang.common (>= 1.11), firmware (>= 13.0), ws.hbang.alderis (>= 1.1), com.mrgcgamer.libgcuniversal
+Depiction: https://spartacusdev.github.io/beta/depictions/notey.html
+SileoDepiction: https://spartacusdev.github.io/beta/sileoDepictions/notey.json

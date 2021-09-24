@@ -1,0 +1,9 @@
+# We don't need this
+.theos/
+
+# Nor do we need this
+packages/
+
+# Had to transfer some files between computers and was too lazy to use GitHub so yeah
+Outdated/
+*.zip
