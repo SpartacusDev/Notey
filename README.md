@@ -1,6 +1,8 @@
 # Notey!
 This tweak adds a floating button like the stock accessibility button, except this new button is ~~unstable and changes position over time. please make a pr to fix it i tried to many different approaches and this is the best i could come up with~~ opens your notes! Not the stock Apple notes app, but notes!
 
+For any bugs/feature requests, either file an issue or join the [Discord server](https://discord.gg/mZZhnRDGeg) (I check the Discord server more often, just saying)!
+
 ## To-Do List
 - [ ] Fix the floating button position somehow. PRs are more than welcomed
 - [ ] Markdown
