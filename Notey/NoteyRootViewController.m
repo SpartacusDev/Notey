@@ -4,6 +4,10 @@
 #import "NSString+StackOverflowAlignment.h"
 #import "UIColor+Alpha.h"
 
+#ifndef bundlePath
+#define bundlePath @"/Library/MobileSubstrate/DynamicLibraries/com.spartacus.notey.bundle"
+#endif
+
 
 @interface UITableView (iLikeReorderingWithoutEditing)
 
@@ -21,11 +25,12 @@
 @implementation NoteyRootViewController
 
 + (instancetype)sharedInstance {
-    static NoteyRootViewController *shared = nil;
-    if (!shared) {
-        shared = [[NoteyRootViewController alloc] init];
-    }
-    return shared;
+    static NoteyRootViewController *sharedInstance = nil;
+	static dispatch_once_t token = 0;
+	dispatch_once(&token, ^{
+		sharedInstance = [[self alloc] init];
+	});
+	return sharedInstance;
 }
 
 - (instancetype)init {

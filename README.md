@@ -13,12 +13,9 @@ For any bugs/feature requests, either file an issue or join the [Discord server]
 Yes please. Just file PRs with your desired changes, with prior testing please! If you haven't tested it first, just say that it's untested
 
 ## Credits
-• Thanks to Herpa for suggesting this tweak and giving me more ideas for improvements, and suggesting this icon. My icon idea was NT in red over a semi-transparent white...
-
-• Thanks to whoever made the tea emoji and no-access emoji cause my icon is basically the two of them on top of each other
-
-• Thanks to anyone who worked on LibGcUniversal
-
-• Thanks to anyone who worked on Cephei
-
-• Thanks to anyone who worked on Alderis
+* Thanks to Herpa for suggesting this tweak and giving me more ideas for improvements, and suggesting this icon. My icon idea was NT in red over a semi-transparent white...
+* Thanks to whoever made the tea emoji and no-access emoji cause my icon is basically the two of them on top of each other
+* Thanks to anyone who worked on LibGcUniversal
+* Thanks to anyone who worked on Cephei
+* Thanks to anyone who worked on Alderis
+* Thanks to [0xkuj](https://github.com/0xkuj/) for finding a way to fix the delay with the CC being dismissed

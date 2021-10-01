@@ -18,11 +18,12 @@
 @implementation NTWindow
 
 + (instancetype)sharedInstance {
-    static NTWindow *shared = nil;
-    if (!shared) {
-        shared = [[NTWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    }
-    return shared;
+    static NTWindow *sharedInstance = nil;
+	static dispatch_once_t token = 0;
+	dispatch_once(&token, ^{
+		sharedInstance = [[self alloc] initWithFrame:UIScreen.mainScreen.bounds];
+	});
+	return sharedInstance;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {

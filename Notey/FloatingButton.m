@@ -283,10 +283,6 @@ typedef enum : int {
             (((NSNumber *)[self.prefs objectForKey:@"border"]).intValue == Bottom && frame.origin.y != ScreenSize.height - frame.size.height - 10) ||
             (((NSNumber *)[self.prefs objectForKey:@"border"]).intValue == Left && frame.origin.x != 10)
         ) {
-            NSLog(@"needed");
-            NSLog(@"%i", ((NSNumber *)[self.prefs objectForKey:@"border"]).intValue);
-            NSLog(@"%f", frame.origin.y);
-            NSLog(@"%f", frame.origin.x);
             if ([NSNumber numberWithInteger:[UIDevice currentDevice].orientation].isPortrait)
                 [self setPositionPortrait];
             else

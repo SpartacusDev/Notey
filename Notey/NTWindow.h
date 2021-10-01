@@ -9,5 +9,6 @@
 
 + (instancetype)sharedInstance;
 - (void)updateSize;
+- (void)showNotey:(UIButton *)sender;
 
 @end
