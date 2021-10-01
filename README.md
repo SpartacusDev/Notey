@@ -8,6 +8,7 @@ For any bugs/feature requests, either file an issue or join the [Discord server]
 - [ ] Markdown
 - [ ] Images support
 - [ ] Lists support (like `•` at the beginning of lines or `1.` (I have no clue how it's called))
+- [ ] Long press the floating button to make a new note (quick-note)
 
 ## Contributing
 Yes please. Just file PRs with your desired changes, with prior testing please! If you haven't tested it first, just say that it's untested
