@@ -81,6 +81,11 @@
 	if (![[NSFileManager defaultManager] fileExistsAtPath:@"/usr/bin/activator"]) {
 		[self removeSpecifier:[self specifierForID:@"activator"] animated:NO];
 	}
+	if ([(NSNumber *)[self readPreferenceValue:[self specifierForID:@"enable"]] boolValue] == YES) {
+		[self removeSpecifier:[self specifierForID:@"position options"] animated:NO];
+		[self removeSpecifier:[self specifierForID:@"position"] animated:NO];
+		[self removeSpecifier:[self specifierForID:@"border"] animated:NO];
+	}
 	if ([UIDevice currentDevice].userInterfaceIdiom != UIUserInterfaceIdiomPad) {
 		[self removeSpecifier:[self specifierForID:@"customSize"] animated:NO];
 		[self removeSpecifier:[self specifierForID:@"width"] animated:NO];
