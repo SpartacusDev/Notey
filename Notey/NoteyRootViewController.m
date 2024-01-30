@@ -4,10 +4,6 @@
 #import "NSString+StackOverflowAlignment.h"
 #import "UIColor+Alpha.h"
 
-#ifndef bundlePath
-#define bundlePath @"/Library/MobileSubstrate/DynamicLibraries/com.spartacus.notey.bundle"
-#endif
-
 
 @interface UITableView (iLikeReorderingWithoutEditing)
 
@@ -111,7 +107,6 @@
     }
 
     HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"com.spartacus.noteyprefs"];
-
     [cell.textLabel setText:self.notes[indexPath.row][@"title"]];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setBackgroundColor:[UIColor colorWithHexAndAlpha:[prefs objectForKey:@"backgroundColor" default:@"#3C0008"]]];
