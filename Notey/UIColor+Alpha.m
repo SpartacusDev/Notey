@@ -9,7 +9,7 @@
 
 + (instancetype)colorWithHexAndAlpha:(NSString *)hexAndAlpha {
     if (![hexAndAlpha containsString:@":"]) {
-        return [self hb_colorWithPropertyListValue:hexAndAlpha];
+        return [self colorWithHex:hexAndAlpha andAlpha:1.0];
     }
     NSArray<NSString *> *hexAndAlphaArray = [hexAndAlpha componentsSeparatedByString:@":"];
     return [self colorWithHex:hexAndAlphaArray[0] andAlpha:hexAndAlphaArray[1].floatValue];
