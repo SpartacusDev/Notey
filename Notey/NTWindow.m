@@ -4,7 +4,11 @@
 #import "NoteyRootViewController.h"
 
 #ifndef bundlePath
-#define bundlePath @"/Library/MobileSubstrate/DynamicLibraries/com.spartacus.notey.bundle/"
+#if TARGET_OS_SIMULATOR
+    #define bundlePath @"/opt/simject/com.spartacus.notey.bundle/"
+#else
+    #define bundlePath @"/Library/MobileSubstrate/DynamicLibraries/com.spartacus.notey.bundle/"
+#endif
 #endif
 
 
