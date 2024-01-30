@@ -6,30 +6,31 @@
 #endif
 
 #ifndef getSize
-#define getSize int widthHeight; \
-                switch ([self.prefs integerForKey:@"size" default:Small]) { \
-                    case ExtraSmall: { \
-                        widthHeight = 25; \
-                        break; \
-                    } \
-                    case Small: { \
-                        widthHeight = 50; \
-                        break; \
-                    } \
-                    case Medium: { \
-                        widthHeight = 75; \
-                        break; \
-                    } \
-                    case Large: { \
-                        widthHeight = 100; \
-                        break; \
-                    } \
-                    default: { \
-                        NSLog(@"what"); \
-                        widthHeight = 50; \
-                        break; \
-                    } \
-                }
+#define getSize \
+int widthHeight; \
+switch ([self.prefs integerForKey:@"size" default:Small]) { \
+    case ExtraSmall: { \
+        widthHeight = 25; \
+        break; \
+    } \
+    case Small: { \
+        widthHeight = 50; \
+        break; \
+    } \
+    case Medium: { \
+        widthHeight = 75; \
+        break; \
+    } \
+    case Large: { \
+        widthHeight = 100; \
+        break; \
+    } \
+    default: { \
+        NSLog(@"what"); \
+        widthHeight = 50; \
+        break; \
+    } \
+}
 #endif
 
 
@@ -47,6 +48,11 @@ typedef enum : int {
     Large
 } ButtonSize;
 
+typedef enum : int {
+    NotMoving,
+    StoppedMoving,
+    Moving
+} IsMoving;
 
 @interface NSNumber (Orientation)
 
@@ -64,7 +70,7 @@ typedef enum : int {
 
 
 @interface FloatingButton () {
-    BOOL moving;
+    IsMoving moving;
 }
 
 @property (nonatomic, strong) HBPreferences *prefs;
@@ -78,7 +84,7 @@ typedef enum : int {
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self->moving = NO;
+        self->moving = NotMoving;
         self.prefs = [[HBPreferences alloc] initWithIdentifier:@"com.spartacus.noteyprefs"];
 
         if (![self.prefs objectForKey:@"orientation"])
@@ -276,7 +282,7 @@ typedef enum : int {
     if (frame.origin.y + frame.size.height > ScreenSize.height)
         frame = CGRectMake(frame.origin.x, ScreenSize.height - self.frame.size.height - 10, self.frame.size.width, self.frame.size.height);
 
-    if (!self->moving) {
+    if (self->moving == StoppedMoving) {
         if (
             (((NSNumber *)[self.prefs objectForKey:@"border"]).intValue == Top && frame.origin.y != 10) ||
             (((NSNumber *)[self.prefs objectForKey:@"border"]).intValue == Right && frame.origin.x != ScreenSize.width - frame.size.width - 10) ||
@@ -288,6 +294,7 @@ typedef enum : int {
             else
                 [self setPositionLandscape];
         }
+        self->moving = NotMoving;
     }
 
     [super setFrame:frame];
@@ -296,7 +303,7 @@ typedef enum : int {
 #pragma mark - Handle Dragging
 
 - (void)handleDrag:(UIPanGestureRecognizer *)sender {
-    self->moving = YES;
+    self->moving = Moving;
     CGPoint translation = [sender translationInView:self.superview];
 	
 	[self setFrame:CGRectMake(
@@ -315,7 +322,7 @@ typedef enum : int {
 
         [self.prefs setObject:[NSNumber numberWithInteger:[UIDevice currentDevice].orientation] forKey:@"orientation"];
 
-        self->moving = NO;
+        self->moving = StoppedMoving;
 
         return;
 	}
