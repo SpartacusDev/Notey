@@ -22,7 +22,7 @@ static LAActivator *_LASharedActivator;
 + (void)load {
 	void *la = dlopen("/usr/lib/libactivator.dylib", RTLD_LAZY);
 	if (!la) {
-		HBLogDebug(@"Failed to load libactivator");
+		NSLog(@"Failed to load libactivator");
 		_LASharedActivator = nil;
 	} else {
 		_LASharedActivator = [LAActivator sharedInstance];
